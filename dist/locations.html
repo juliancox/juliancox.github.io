@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
+    
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>We Are Worth It - Join Us</title>
+
+    <style>
+        #overlay {
+            font-size: 12px;
+            border: 1px solid gray;
+            padding: 0.15em 0.5em;
+            background-color: white;
+            border-radius: 0.3em;
+        }
+    </style>
+
+<script type="module" crossorigin src="/assets/locations.6e35b9cd.js"></script>
+  <link rel="modulepreload" href="/assets/dynamic-import-polyfill.b3685604.js">
+  <link rel="modulepreload" href="/assets/locations.9288772a.js">
+  <link rel="modulepreload" href="/assets/vendor.f65a53eb.js">
+  <link rel="stylesheet" href="/assets/style.b90d99d1.css">
+</head>
+
+<body>
+
+    <div style="max-width: 1280px" class="mx-auto">
+        <div class="relative bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="relative z-10 pb-12 bg-white  lg:w-full" x-data="{ open: false }">
+
+                    <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                        <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start mt-4"
+                            aria-label="Global">
+                            <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                                <div class="flex items-center justify-between w-full md:w-auto">
+                                    <a href="https://www.patientvoice.org.nz/" target="_blank">
+                                        <span class="sr-only">Workflow</span>
+                                        <img class="h-24 w-auto sm:h-24" src="/assets/pva_logo.a158de71.jpg">
+                                    </a>
+                                    <div class="-mr-2 flex items-center md:hidden">
+                                        <button type="button" @click="open = true"
+                                            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                                            aria-expanded="false">
+                                            <span class="sr-only">Open main menu</span>
+                                            <!-- Heroicon name: outline/menu -->
+                                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16M4 18h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+
+                                <a href="/" class="font-medium text-gray-500 hover:text-gray-900">Home</a>
+
+                                <a href="/locations.html" class="font-medium text-gray-500 hover:text-gray-900">Join
+                                    Us</a>
+
+                                <a href="/locations.html#locations"
+                                    class="font-medium text-gray-500 hover:text-gray-900">Locations</a>
+
+                                <a href="/newsite.html"
+                                    class="font-medium text-gray-500 hover:text-gray-900">Coordinate</a>
+
+                            </div>
+                        </nav>
+                    </div>
+
+                    <!--
+                Mobile menu, show/hide based on menu open state.
+        
+                Entering: "duration-150 ease-out"
+                  From: "opacity-0 scale-95"
+                  To: "opacity-100 scale-100"
+                Leaving: "duration-100 ease-in"
+                  From: "opacity-100 scale-100"
+                  To: "opacity-0 scale-95"
+              -->
+                    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                        x-show="open" x-transition:enter="transition ease-out duration-150"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-100"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95">
+                        <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                            <div class="px-5 pt-4 flex items-center justify-between">
+                                <div>
+                                    <img class="h-24 w-auto" src="/assets/pva_logo.a158de71.jpg" alt="">
+                                </div>
+                                <div class="-mr-2">
+                                    <button type="button" @click="open = false"
+                                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <span class="sr-only">Close main menu</span>
+                                        <!-- Heroicon name: outline/x -->
+                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="px-2 pt-2 pb-3 space-y-1">
+                                <a href="/"
+                                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+
+                                <a href="/locations.html"
+                                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Join
+                                    Us</a>
+
+                                <a href="/locations.html#locations"
+                                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Locations</a>
+
+
+                                <a href="/newsite.html"
+                                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Coordinate</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                        <div class="sm:text-center lg:text-left">
+                            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                                <span class="block 2xl:inline">Join Us</span>
+                                <span class="block text-indigo-600 2xl:inline">Wednesday May 12</span>
+
+                            </h1>
+                            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+                                Half an hour of your time could save the lives of thousands of kiwis.
+                                All we need you to do is turn up to your nearest location at 12.15 pm
+                                Then at 12:30 pm, we will all lie down for five minutes
+                                We should be all finished by 12:45 pm.
+                            </p>
+                            <p id="locations"
+                                class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg md:mt-5 md:text-xl lg:mx-0">
+                                Click the location closest to you on the map to see the details for your area. If there
+                                isn't a site near you please consider
+                                <a href="/newsite.html" class="font-bold text-indigo-600 hover:underline">coordinating
+                                    your own site</a>. We'd like as many locations as possible
+                            </p>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div id="map" style="height:400px;"></div>
+
+    <div class="bg-gray-100">
+        <div style="max-width: 1280px" class="mx-auto flex flex-wrap justify-around">
+
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+            id="whangarei">
+            <div class="p-4">
+                <p class="text-base font-semibold text-gray-900">Whangarei</p>
+                <p class="text-sm text-indigo-500">Laurie Hall Park</p>
+                <p class="mt-4"><a href="https://www.facebook.com/events/1129047557569873/" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+               <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Richard Soper</span> coordinating</p>
+             </div>
+            <div class="flex justify-between border-t">
+                <div class="p-4 flex-1 text-center cursor-pointer">
+                    <a href="tel:+64211916258" class="cursor-pointer">
+                        <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                            <defs></defs>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                            </path>
+                        </svg>
+                        Call
+                    </a>
+                </div>
+                <div class="border-l"></div>
+                <div class="p-4 flex-1 text-center">
+                    <a href="mailto:richard.soper@police.govt.nz " class=' cursor-pointer'>
+                        <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                            <defs></defs>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                            </path>
+                        </svg> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="auckland">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Auckland</p>
+                    <p class="text-sm text-indigo-500">Cricket Ground, Auckland Domain</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/1106296909891952" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                   <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Chloe Irvine</span> coordinating</p>
+                 </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64223404271" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:chloeirvine@gmail.com" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="hamilton">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Hamilton</p>
+                    <p class="text-sm text-indigo-500">Innes Common, Hamilton Lake</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/452490252720855" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Tracee Berry</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64272726666" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:Tracee.Berry@waipadc.govt.nz" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="whakatane">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Whakatane</p>
+                    <p class="text-sm text-indigo-500">Whakatane Riverbank opposite the Warehouse</p>
+                    <p class="text-sm  mt-2"><span class="text-gray-700 font-bold">Te Arani Barrett</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64223942778" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:tearanibarrett@gmail.com" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="newply">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">New Plymouth</p>
+                    <p class="text-sm text-indigo-500">Puke Ariki Landing</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/1071333870058619" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                  <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Rob Kirkwood</span> coordinating
+                    </p>
+                  </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64275201799" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:robk@energyworks.net.nz" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+            id="hastings">
+            <div class="p-4">
+                <p class="text-base font-semibold text-gray-900">Hastings</p>
+                <p class="text-sm text-indigo-500">Hastings Clock Tower</p>
+                <p class="mt-4"><a href="https://www.facebook.com/events/296978498561502/" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+              <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Henry Heke</span> coordinating
+                </p>
+              </div>
+            <div class="flex justify-between border-t">
+                <div class="p-4 flex-1 text-center cursor-pointer">
+                    <a href="tel:+64272558865" class="cursor-pointer">
+                        <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                            <defs></defs>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                            </path>
+                        </svg>
+                        Call
+                    </a>
+                </div>
+                <div class="border-l"></div>
+                <div class="p-4 flex-1 text-center">
+                    <a href="mailto:henry.heke@healthhb.co.nz" class=' cursor-pointer'>
+                        <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                            <defs></defs>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                            </path>
+                        </svg> Email
+                    </a>
+                </div>
+            </div>
+        </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="palmnth">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Palmerston North</p>
+                    <p class="text-sm text-indigo-500">The Square by the Te Aweawe Statue</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/835497563990802" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Chrissy Paul</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64221405227" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:chrissy@tewakahuia.org.nz" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="wellington">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Wellington</p>
+                    <p class="text-sm text-indigo-500">Parliament (Meet at the Cenotaph)</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/135609998575331/" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Ruby McGill</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64276566900" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:ruby_tuesday2@hotmail.com" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="greymouth">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Greymouth</p>
+                    <p class="text-sm text-indigo-500">Grey District Council, 105 Tainui Street</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/918073192095176" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Kate Dalzell</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64221097709" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:katejanedalzell@gmail.com" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="dunedin">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900"> Christchurch</p>
+                    <p class="text-sm text-indigo-500">The Square</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/1974069392775662" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Vicky Devine</span> coordinating
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+64272425414" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:vicky.devine13@gmail.com" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class='m-8 bg-white rounded border shadow w-64 text-gray-500 flex flex-col justify-between'
+                id="dunedin">
+                <div class="p-4">
+                    <p class="text-base font-semibold text-gray-900">Dunedin</p>
+                    <p class="text-sm text-indigo-500">The Octagon</p>
+                    <p class="mt-4"><a href="https://www.facebook.com/events/513786506641803" target="_blank"><img class="block" src="/assets/fbevent.a754b44d.png" style="width: 80%"/></a></p>
+                    <p class="text-sm  mt-4"><span class="text-gray-700 font-bold">Camilla Cox</span> coordinating
+  
+                    </p>
+                </div>
+                <div class="flex justify-between border-t">
+                    <div class="p-4 flex-1 text-center cursor-pointer">
+                        <a href="tel:+642102428195" class="cursor-pointer">
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z">
+                                </path>
+                            </svg>
+                            Call
+                        </a>
+                    </div>
+                    <div class="border-l"></div>
+                    <div class="p-4 flex-1 text-center">
+                        <a href="mailto:camilla.cox@webspeed.co.nz" class=' cursor-pointer'>
+                            <svg class="inline-block align-top" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="rgb(107, 114, 128)" xmlns="http://www.w3.org/2000/svg">
+                                <defs></defs>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z">
+                                </path>
+                            </svg> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-indigo-900 ">
+        <div style="max-width: 1280px"
+            class="mx-auto md:flex justify-between items-end py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="  text-gray-300 text-xs leading-normal">
+                For all enquiries please contact:<br />
+                <span class="font-bold">Malcolm Mulholland</span><br />
+                <a href="mailto:76mulholland@gmail.com" class="hover:underline">76mulholland@gmail.com</a><br />
+                <a href="tel:+64220975899">022 097 5899</a><br />
+            </div>
+            <div class=" text-gray-300 text-xs leading-normal mt-8">
+                &copy; Copyright 2021, Patient Voice Aotearoa, All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

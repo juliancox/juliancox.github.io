@@ -1,0 +1,20 @@
+{
+  "name": "worthit2",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp CNAME ./dist/CNAME && mkdir -p ./dist/images && cp -r images/ ./dist/images/",
+    "serve": "vite preview",
+    "deploy": "git push origin `git subtree split --prefix dist master`:gh-pages --force"
+  },
+  "devDependencies": {
+    "alpinejs": "^2.8.2",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.9",
+    "tailwindcss": "^2.1.1",
+    "vite": "^2.1.5"
+  },
+  "dependencies": {
+    "ol": "^6.5.0"
+  }
+}
